@@ -42,7 +42,13 @@ let basalMetabolicOutput = basalMetabolicCalculate();
 // PAL factor (PAL=Physical Activity Level) *
 // basal metabolic rate can be multiplied.
 
-const totalMetabolicRateCalculate = () =>
+const totalMetabolicRateCalculateKcal = () =>
   basalMetabolicOutput * physicalStrainPAL;
+
+let totalKcal = totalMetabolicRateCalculateKcal();
+
+// 1 kcal -> 4,184
+
+const totalMetabolicRateCalculateKJ = () => totalKcal * 4.184;
 
 //  ! --------------------------- Work Plan

@@ -29,7 +29,7 @@
         </div>
         <h3>Arbeits- und Freizeitaktivität</h3>
         <select name="select" id="select">
-          <option value="almost-no-activity">Schlafen</option>
+          <option value="almost-no-activity" selected>Schlafen</option>
           <option value="very-little">Nur Sitzen oder Liegen</option>
           <option value="little">
             Ausschließlich sitzende Tätigkeit mit wenig oder keiner körperlichen
@@ -47,6 +47,26 @@
             Körperlich anstrengende berufliche Arbeit
           </option>
         </select>
+        <input type="submit" value="Submit" />
+        <article class="output-article">
+          <table>
+            <tr>
+              <th></th>
+              <th>Kcal</th>
+              <th>KJ</th>
+            </tr>
+            <tr>
+              <td>Grundumsatz</td>
+              <td data-js="bm-rate-kcal">bm-rate-kcal</td>
+              <td data-js="bm-rate-KJ">bm-rate-KJ</td>
+            </tr>
+            <tr>
+              <td>Gesamtumsatz</td>
+              <td data-js="total-rate-kcal">total-rate-kcal</td>
+              <td data-js="total-rate-KJ">total-rate-KJ</td>
+            </tr>
+          </table>
+        </article>
       </form>
     </main>
 
