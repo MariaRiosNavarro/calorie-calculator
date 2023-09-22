@@ -1,5 +1,7 @@
 # calorie-calculator
 
+# [GitHub Pages Deployment](https://mariariosnavarro.github.io/calorie-calculator/)
+
 - I use the Harris Benedict Formula
 
 - Weight are in Kg, Height in cm and Age in Years
@@ -40,15 +42,10 @@ Total turnover TEST = Female Basal metabolic rate TEST x PAL(1.2) = 1626.6.
 
 ```
 
-# [GitHub Pages Deployment]()
-
 <div>
 
 <img src="./assets/img/readme1.png" width="300px">
 <img src="./assets/img/readme2.png" width="300px">
 <img src="./assets/img/readme3.png" width="300px">
-<img src="./assets/img/readme4.png" width="300px">
-<img src="./assets/img/readme5.png" width="300px">
 
 </div>
-````
