@@ -17,6 +17,7 @@ main {
   align-self: center;
   justify-content: center;
   width: 100vw;
+  min-width: 280px;
 }
 
 h1 {
@@ -31,6 +32,7 @@ form {
   align-self: center;
   padding: 2rem;
   background-color: lightgray;
+  min-height: 430px;
   height: 80vh;
 }
 
@@ -48,8 +50,14 @@ select {
   display: block;
 }
 
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 table {
-  width: auto;
+  width: 95%;
   margin: 2rem auto;
   height: auto;
   display: none;
@@ -86,4 +94,15 @@ td {
 
 .bold {
   font-weight: 700;
+}
+
+.alert {
+  background-color: red;
+  border-radius: 2px;
+  color: bisque;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 3rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
 }

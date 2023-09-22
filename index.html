@@ -10,6 +10,7 @@
     <main>
       <form onsubmit="calculateData(); return false">
         <h1>Grundumsatz-rechner</h1>
+        <div data-js="alert"></div>
         <label for="heightCM">Korpergroße (cm)</label>
         <input type="number" name="heightCM" id="heightCM" data-js="heightCM" />
         <label for="ageYears">Alter (jahre)</label>
@@ -26,7 +27,13 @@
         />
         <h3>Körperbau</h3>
         <div class="wrapper">
-          <input type="radio" name="build" id="female" data-js="female" />
+          <input
+            type="radio"
+            name="build"
+            id="female"
+            data-js="female"
+            checked
+          />
           <label for="female">Weiblich</label>
         </div>
         <div class="wrapper">

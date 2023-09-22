@@ -13,10 +13,15 @@ const outputTotalKcal = document.querySelector('[data-js="total-rate-kcal"]');
 const outputTotalKJ = document.querySelector('[data-js="total-rate-KJ"]');
 
 const outputTable = document.querySelector('[data-js="table"]');
+const alert = document.querySelector('[data-js="alert"]');
 
 // 2 Create Function
 
 const calculateData = () => {
+  // remove alert if exist
+
+  alert.innerHTML = "";
+
   // 3 Save Values
 
   let height = Number(heightInput.value); //number
@@ -24,6 +29,15 @@ const calculateData = () => {
   let weight = Number(weightInput.value); //number
   let selection = selectInput.value; //string
   let female = femaleInput.checked; //true default
+
+  // error handling
+
+  //   const numberRegex = /^[\d,.]+$/;
+
+  if (height === 0 || age === 0 || weight === 0) {
+    alert.innerHTML = `<p class="alert">Bitte, geben Sie ein gültige Wert<p>`;
+    return;
+  }
 
   //   female vs male
 
