@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <form onsubmit="calculate">
+      <form onsubmit="calculateData(); return false">
         <h1>Grundumsatz-rechner</h1>
         <label for="heightCM">Korpergroße(cm)</label>
         <input type="number" name="heightCM" id="heightCM" data-js="heightCM" />
@@ -16,8 +16,14 @@
         <input type="number" name="ageYears" id="ageYears" data-js="ageYears" />
 
         <label for="weightKg">Gewicht (Kg)</label>
-        <!-- text to accept , or . as dezimal -->
-        <input type="text" name="weightKg" id="weightKg" data-js="weightKg" />
+        <!-- Add  step="0.01" to accept floats with 2 dezimals eg => 62,45-->
+        <input
+          type="number"
+          step="0.01"
+          name="weightKg"
+          id="weightKg"
+          data-js="weightKg"
+        />
         <h3>Körperbau</h3>
         <div class="wrapper">
           <input type="radio" name="build" id="female" data-js="female" />
@@ -28,7 +34,7 @@
           <label for="male">Männlich</label>
         </div>
         <h3>Arbeits- und Freizeitaktivität</h3>
-        <select name="select" id="select">
+        <select name="select" id="select" data-js="select">
           <option value="almost-no-activity" selected>Schlafen</option>
           <option value="very-little">Nur Sitzen oder Liegen</option>
           <option value="little">
@@ -56,12 +62,12 @@
               <th>KJ</th>
             </tr>
             <tr>
-              <td>Grundumsatz</td>
+              <td class="bold">Grundumsatz</td>
               <td data-js="bm-rate-kcal">bm-rate-kcal</td>
               <td data-js="bm-rate-KJ">bm-rate-KJ</td>
             </tr>
             <tr>
-              <td>Gesamtumsatz</td>
+              <td class="bold">Gesamtumsatz</td>
               <td data-js="total-rate-kcal">total-rate-kcal</td>
               <td data-js="total-rate-KJ">total-rate-KJ</td>
             </tr>
