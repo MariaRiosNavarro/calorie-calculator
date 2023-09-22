@@ -75,8 +75,6 @@ const calculateData = () => {
 
   // * GENERAL FORMULA (female & male)
 
-  //- Transform to KJ -> 1 kcal = 4,184 KJ
-
   const basalMetabolicCalculate = (i, x, y, z) => {
     let firstvalue = x * weight;
     let secondvalue = y * height;
@@ -90,6 +88,8 @@ const calculateData = () => {
   let basalMetabolicKcal = basalMetabolicCalculate(a, b, c, d);
 
   let bmKcalOutput = basalMetabolicKcal.toFixed(1); //Round only for the Output
+
+  //- Transform to KJ -> 1 kcal = 4,184 KJ
 
   let basalMetabolicKJ = basalMetabolicKcal * 4.18;
 
