@@ -12,6 +12,8 @@ const outputBMKJ = document.querySelector('[data-js="bm-rate-KJ"]');
 const outputTotalKcal = document.querySelector('[data-js="total-rate-kcal"]');
 const outputTotalKJ = document.querySelector('[data-js="total-rate-KJ"]');
 
+const outputTable = document.querySelector('[data-js="table"]');
+
 // 2 Create Function
 
 const calculateData = () => {
@@ -22,9 +24,6 @@ const calculateData = () => {
   let weight = Number(weightInput.value); //number
   let selection = selectInput.value; //string
   let female = femaleInput.checked; //true default
-  let male = maleInput.checked; //false default
-
-  // * GENERAL FORMULA (women & men)
 
   //   female vs male
 
@@ -41,8 +40,6 @@ const calculateData = () => {
     c = 5;
     d = 6.8;
   }
-
-  //console.log({ a, b, c, d });
 
   // activity Pal selection
 
@@ -64,7 +61,9 @@ const calculateData = () => {
     pal = 0.95;
   }
 
-  // ---General Formula (female + male)- Transform to KJ -> 1 kcal = 4,184 KJ
+  // * GENERAL FORMULA (female & male)
+
+  //- Transform to KJ -> 1 kcal = 4,184 KJ
 
   const basalMetabolicCalculate = (i, x, y, z) => {
     let firstvalue = x * weight;
@@ -74,21 +73,17 @@ const calculateData = () => {
     return result;
   };
 
-  // -basal Metabolic kcal and KJ
+  // -basal Metabolic kcal and KJ //only round in output
 
   let basalMetabolicKcal = basalMetabolicCalculate(a, b, c, d);
 
   let bmKcalOutput = basalMetabolicKcal.toFixed(1); //Round only for the Output
 
-  console.log({ basalMetabolicKcal });
-
-  //   KJ Output = kcal * 4.18
-
   let basalMetabolicKJ = basalMetabolicKcal * 4.18;
 
   let bmKJOutput = basalMetabolicKJ.toFixed(1);
 
-  // - TOTAL basal Metabolic kcal and KJ (with Pal)
+  // - TOTAL basal Metabolic kcal and KJ (with Pal) //only round in output
 
   const totalMetabolicRateCalculate = (num) => num * pal;
 
@@ -104,7 +99,13 @@ const calculateData = () => {
   outputTotalKcal.innerHTML = totalKcal;
   outputTotalKJ.innerHTML = totalKJ;
 
-  // TEST DATA female:
+  // -TEST DATA 'female' & 'selection =very-little'(1.2):
+  // -weight=63, height=168, age =44
   //
-  // 655.1 + (9.6 * 63) + (1.8 * 168) – (4.7 * 44). PLUS PAL (1.2) = 1626.6.
+  // -bmKcalOutput = 655.1 + (9.6 * 63) + (1.8 * 168) – (4.7 * 44)= 1355,5
+  // -totalKcal(1.2) = 1626.6.
+
+  //   Visibility of the table
+
+  outputTable.classList.toggle("block");
 };

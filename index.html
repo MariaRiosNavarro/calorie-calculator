@@ -10,9 +10,9 @@
     <main>
       <form onsubmit="calculateData(); return false">
         <h1>Grundumsatz-rechner</h1>
-        <label for="heightCM">Korpergroße(cm)</label>
+        <label for="heightCM">Korpergroße (cm)</label>
         <input type="number" name="heightCM" id="heightCM" data-js="heightCM" />
-        <label for="ageYears">Alter(jahre)</label>
+        <label for="ageYears">Alter (jahre)</label>
         <input type="number" name="ageYears" id="ageYears" data-js="ageYears" />
 
         <label for="weightKg">Gewicht (Kg)</label>
@@ -55,11 +55,11 @@
         </select>
         <input type="submit" value="Submit" />
         <article class="output-article">
-          <table>
+          <table data-js="table">
             <tr>
-              <th></th>
-              <th>Kcal</th>
-              <th>KJ</th>
+              <th class="small"></th>
+              <th class="big">Kcal</th>
+              <th class="big">KJ</th>
             </tr>
             <tr>
               <td class="bold">Grundumsatz</td>
