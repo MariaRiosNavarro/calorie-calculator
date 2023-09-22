@@ -102,8 +102,6 @@ const calculateData = () => {
   let totalKcal = totalMetabolicRateCalculate(basalMetabolicKcal).toFixed(1); //Round only for the Output
   let totalKJ = totalMetabolicRateCalculate(basalMetabolicKJ).toFixed(1); //Round only for the Output
 
-  console.log({ totalKcal, totalKJ });
-
   outputBMKcal.innerHTML = bmKcalOutput;
   outputBMKJ.innerHTML = bmKJOutput;
   outputTotalKcal.innerHTML = totalKcal;
