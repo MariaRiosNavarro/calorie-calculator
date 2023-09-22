@@ -69,7 +69,7 @@ const calculateData = () => {
     pal = 1.7;
   } else if (selection === "hard") {
     pal = 1.9;
-  } else if (selection === "hard") {
+  } else if (selection === "very-hard") {
     pal = 2.2;
   } else {
     pal = 0.95;
