@@ -22,6 +22,7 @@ main {
 
 h1 {
   padding: 1rem 0;
+  text-align: center;
 }
 
 form {
@@ -32,18 +33,30 @@ form {
   align-self: center;
   padding: 2rem;
   background-color: lightgray;
-  min-height: 430px;
+  min-height: 650px;
   height: 80vh;
 }
 
 input,
-label {
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
+label,
+h3,
+select {
+  margin: 0.3rem 0;
+  padding: 0.3rem;
+  border-radius: 3px;
+  border: none;
+  font-size: 1.5rem;
 }
 
 select {
-  margin: 1rem 0;
+  border-radius: 3px;
+}
+
+input[type="submit"] {
+  background-color: blue;
+  padding: 1rem;
+  color: azure;
+  margin: 1.5rem 0;
 }
 
 .block {
@@ -62,6 +75,7 @@ table {
   height: auto;
   display: none;
   table-layout: auto;
+  font-size: 1.5rem;
 }
 
 tr {
@@ -96,6 +110,13 @@ td {
   font-weight: 700;
 }
 
+/* Alert style */
+
+.space {
+  height: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
 .alert {
   background-color: red;
   border-radius: 2px;
@@ -105,4 +126,8 @@ td {
   padding: 0.5rem 3rem;
   font-weight: 700;
   letter-spacing: 0.3rem;
+}
+
+p {
+  font-size: 1.5rem;
 }
