@@ -30,16 +30,14 @@ const calculateData = () => {
   let selection = selectInput.value; //string
   let female = femaleInput.checked; //true default
 
-  // error handling
-
-  //   const numberRegex = /^[\d,.]+$/;
+  // 4 error handling
 
   if (height === 0 || age === 0 || weight === 0) {
     alert.innerHTML = `<p class="alert">Bitte, geben Sie ein gültige Wert<p>`;
     return;
   }
 
-  //   female vs male
+  // 5 Select Values for the Formula basalMetabolicCalculate -> female vs male
 
   let a, b, c, d;
 
@@ -55,7 +53,7 @@ const calculateData = () => {
     d = 6.8;
   }
 
-  // activity Pal selection
+  // 6 Select activity Pal for the Formula totalMetabolicRateCalculate
 
   let pal = 0.95;
 
@@ -95,16 +93,14 @@ const calculateData = () => {
 
   let basalMetabolicKJ = basalMetabolicKcal * 4.18;
 
-  let bmKJOutput = basalMetabolicKJ.toFixed(1);
+  let bmKJOutput = basalMetabolicKJ.toFixed(1); //Round only for the Output
 
   // - TOTAL basal Metabolic kcal and KJ (with Pal) //only round in output
 
   const totalMetabolicRateCalculate = (num) => num * pal;
 
-  //   round with .toFixed(2)
-
-  let totalKcal = totalMetabolicRateCalculate(basalMetabolicKcal).toFixed(1);
-  let totalKJ = totalMetabolicRateCalculate(basalMetabolicKJ).toFixed(1);
+  let totalKcal = totalMetabolicRateCalculate(basalMetabolicKcal).toFixed(1); //Round only for the Output
+  let totalKJ = totalMetabolicRateCalculate(basalMetabolicKJ).toFixed(1); //Round only for the Output
 
   console.log({ totalKcal, totalKJ });
 
@@ -112,12 +108,6 @@ const calculateData = () => {
   outputBMKJ.innerHTML = bmKJOutput;
   outputTotalKcal.innerHTML = totalKcal;
   outputTotalKJ.innerHTML = totalKJ;
-
-  // -TEST DATA 'female' & 'selection =very-little'(1.2):
-  // -weight=63, height=168, age =44
-  //
-  // -bmKcalOutput = 655.1 + (9.6 * 63) + (1.8 * 168) – (4.7 * 44)= 1355,5
-  // -totalKcal(1.2) = 1626.6.
 
   //   Visibility of the table
 
