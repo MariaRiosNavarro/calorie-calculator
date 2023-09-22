@@ -28,6 +28,8 @@ const calculateData = () => {
 
   //   female vs male
 
+  let a, b, c, d;
+
   if (female === true) {
     a = 655.1;
     b = 9.6;
@@ -62,37 +64,43 @@ const calculateData = () => {
     pal = 0.95;
   }
 
-  //console.log(pal);
+  // ---General Formula (female + male)- Transform to KJ -> 1 kcal = 4,184 KJ
 
-  // General Formula (female + male):
-  //   Transform to KJ -> 1 kcal = 4,184 KJ
+  const basalMetabolicCalculate = (i, x, y, z) => {
+    let firstvalue = x * weight;
+    let secondvalue = y * height;
+    let thirdvalue = z * age;
+    let result = i + firstvalue + secondvalue - thirdvalue;
+    return result;
+  };
 
   // -basal Metabolic kcal and KJ
 
-  const calToKJ = (cal) => cal * 4.18;
+  let basalMetabolicKcal = basalMetabolicCalculate(a, b, c, d);
 
-  const basalMetabolicCalculate = (a, b, c, d) =>
-    a + b * weight + c * height + d * age;
-
-  let basalMetabolicKcal = basalMetabolicCalculate();
+  let bmKcalOutput = basalMetabolicKcal.toFixed(1); //Round only for the Output
 
   console.log({ basalMetabolicKcal });
 
-  //   KJ Output
+  //   KJ Output = kcal * 4.18
 
-  let basalMetabolicKJ = calToKJ(basalMetabolicKcal);
+  let basalMetabolicKJ = basalMetabolicKcal * 4.18;
+
+  let bmKJOutput = basalMetabolicKJ.toFixed(1);
 
   // - TOTAL basal Metabolic kcal and KJ (with Pal)
 
   const totalMetabolicRateCalculate = (num) => num * pal;
 
-  let totalKcal = totalMetabolicRateCalculate(basalMetabolicKcal);
-  let totalKJ = totalMetabolicRateCalculate(basalMetabolicKJ);
+  //   round with .toFixed(2)
+
+  let totalKcal = totalMetabolicRateCalculate(basalMetabolicKcal).toFixed(1);
+  let totalKJ = totalMetabolicRateCalculate(basalMetabolicKJ).toFixed(1);
 
   console.log({ totalKcal, totalKJ });
 
-  outputBMKcal.innerHTML = basalMetabolicKcal;
-  outputBMKJ.innerHTML = basalMetabolicKJ;
+  outputBMKcal.innerHTML = bmKcalOutput;
+  outputBMKJ.innerHTML = bmKJOutput;
   outputTotalKcal.innerHTML = totalKcal;
   outputTotalKJ.innerHTML = totalKJ;
 
