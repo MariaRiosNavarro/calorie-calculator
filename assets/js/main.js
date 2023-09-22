@@ -27,14 +27,14 @@ const physicalStrainPAL = {
 
 // * GENERAL FORMULA (women & men)
 
-let bodyWeightKg = 0;
+let weightKg = 0;
 let heightCM = 0;
 let ageYears = 0;
 
 let a, b, c, d;
 
 const basalMetabolicCalculate = (a, b, c, d) =>
-  a + b * bodyWeightKg + c * heightCM + d * ageYears;
+  a + b * weightKg + c * heightCM + d * ageYears;
 
 let basalMetabolicOutput = basalMetabolicCalculate();
 
