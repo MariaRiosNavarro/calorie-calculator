@@ -1,3 +1,5 @@
+// ----------------------------!analysis of the exercise-----
+
 const physicalStrainPAL = {
   0.95: "Schlafen",
   1.2: "Nur Sitzen oder Liegen",
@@ -6,8 +8,6 @@ const physicalStrainPAL = {
   1.9: "Überwiegend gehende oder stehende Tätigkeit, z.B. Verkäufer, Kellner, Handwerker, Mechaniker, Hausfrauen",
   2.2: "Körperlich anstrengende berufliche Arbeit",
 };
-
-// Steps
 
 // Calculate 1st basal metabolic rate. Harris Benedict formula:
 
@@ -44,3 +44,5 @@ let basalMetabolicOutput = basalMetabolicCalculate();
 
 const totalMetabolicRateCalculate = () =>
   basalMetabolicOutput * physicalStrainPAL;
+
+//  ! --------------------------- Work Plan
