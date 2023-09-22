@@ -36,6 +36,11 @@ let a, b, c, d;
 const basalMetabolicCalculate = (a, b, c, d) =>
   a + b * bodyWeightKg + c * heightCM + d * ageYears;
 
+let basalMetabolicOutput = basalMetabolicCalculate();
+
 // *total metabolic rate to be calculated:
 // PAL factor (PAL=Physical Activity Level) *
 // basal metabolic rate can be multiplied.
+
+const totalMetabolicRateCalculate = () =>
+  basalMetabolicOutput * physicalStrainPAL;
